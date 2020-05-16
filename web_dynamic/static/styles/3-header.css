@@ -12,6 +12,6 @@ header .logo {
     display: inline-block;
 }
 
-.available {
+.circle.available {
     background-color: #ff545f;
 }
