@@ -20,5 +20,3 @@ if (status === 'success') {
       }
 }
   });
-});
-
