@@ -27,16 +27,22 @@ $.ajax('http://0.0.0.0:5001/api/v1/places_search', {
     success: data => {
       data.forEach(place => {
 	$('section.places').append(
-	  '<article><div class="title box"<h2>' + place.name +
-	    'div class="price_by_night">' + place.price_by_night +
-	    '</div></div>' +
-	    '<div class="information">' +
-	    '<div class="max_guest">' + place.max_guest + ' Guests</div>' +
-	    '<div class="number_rooms">' + place.number_rooms + ' Bedrooms</div>' +
-	    '<div class="number_bathrooms">' + place.number_bathrooms + ' Bathrooms</div>' +
-	    '<div class="user">' + ${users[place.user_id]} + '</div>' +
-	    '<div class="description">' + place.description + '</div></article>'
+	  `<article>
+	      <div class="title_box">
+	        <h2>${place.name}</h2>
+	        <div class="price_by_night">$${place.price_by_night}</div>
+	      </div>
+	      <div class="information">
+	        <div class="max_guest">${place.max_guest} Guests</div>
+            <div class="number_rooms">${place.number_rooms} Bedrooms</div>
+            <div class="number_bathrooms">${place.number_bathrooms} Bathrooms</div>
+	      </div>
+          </div>
+          <div class="description">
+	        ${place.description}
+	  </div>
+	    </article>`
 	  );
 	}
-     }
+	}
   });
